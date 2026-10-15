@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coworking | Wogenau</title>
+    
+    <!-- Tailwind CSS for layout and styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Space Grotesk for a slightly quirky but modern, clean look (fits the illustration style) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons for clean line-art icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                    colors: {
+                        wogenau: {
+                            yellow: '#FFDE00', // A punchy, illustrative yellow
+                            dark: '#1A1A1A',
+                            bg: '#FFFFFF'
+                        }
+                    },
+                    boxShadow: {
+                        'matt': '6px 6px 0px 0px rgba(26, 26, 26, 1)',
+                        'matt-hover': '2px 2px 0px 0px rgba(26, 26, 26, 1)',
+                        'matt-large': '12px 12px 0px 0px rgba(26, 26, 26, 1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #1a1a1a;
+            /* subtle noise texture can add to the illustrative feel, but keeping it clean white for now */
+        }
+        
+        .brutal-border {
+            border: 3px solid #1a1a1a;
+        }
+
+        .brutal-btn {
+            transition: all 0.2s ease-in-out;
+        }
+
+        .brutal-btn:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 2px 2px 0px 0px rgba(26, 26, 26, 1);
+        }
+
+        /* Abstract scribble for background accents */
+        .scribble-bg {
+            background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-wogenau-yellow selection:text-wogenau-dark">
+
+    <nav class="w-full border-b-[3px] border-wogenau-dark bg-white z-50 sticky top-0">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Brand -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <span class="font-bold text-2xl tracking-tight bg-wogenau-yellow px-3 py-1 border-[3px] border-wogenau-dark shadow-[4px_4px_0px_0px_#1a1a1a] transform -rotate-1">Wogenau Coworking</span>
+                </div>
+                
+                <!-- Links -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#how-it-works" class="font-bold hover:underline decoration-[3px] underline-offset-4 decoration-wogenau-yellow">So geht's</a>
+                    <a href="#inventory" class="font-bold hover:underline decoration-[3px] underline-offset-4 decoration-wogenau-yellow">Ausstattung</a>
+                    <a href="#team" class="font-bold hover:underline decoration-[3px] underline-offset-4 decoration-wogenau-yellow">Team</a>
+                    <a href="https://wogenau.haus/" class="text-sm font-bold text-gray-400 hover:text-wogenau-dark transition-colors flex items-center gap-1" title="Ein Projekt von Wogenau">
+                        wogenau.haus
+                        <i data-feather="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#join" class="inline-block bg-white text-wogenau-dark font-bold py-2 px-6 brutal-border shadow-matt brutal-btn">
+                        Platz buchen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <section class="relative pt-20 pb-24 lg:pt-32 lg:pb-40 overflow-hidden">
+            <!-- Decorative scribble background element -->
+            <div class="absolute top-10 right-10 w-64 h-64 scribble-bg rounded-full opacity-20 -z-10"></div>
+            
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Text Content -->
+                    <div class="space-y-8">
+                        <div class="inline-block bg-wogenau-yellow font-bold px-3 py-1 brutal-border shadow-matt text-sm uppercase tracking-wide">
+                            Neues Projekt
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
+                            Dein Schreibtisch im <br>
+                            <span class="relative inline-block">
+                                Quartier.
+                                <!-- Hand-drawn style underline -->
+                                <svg class="absolute w-full h-4 -bottom-2 left-0 text-wogenau-yellow" viewBox="0 0 100 10" preserveAspectRatio="none">
+                                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4" fill="none" />
+                                </svg>
+                            </span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-800 leading-relaxed font-medium max-w-lg">
+                            Willkommen im Coworking-Space unseres Wogenau-Projekts. Ein produktiver Ort zum Arbeiten – <span class="font-bold bg-wogenau-yellow/30 px-1">exklusiv für unsere Bewohner:innen</span> und mit ganz flexiblen Öffnungszeiten.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                            <a href="#how-it-works" class="bg-wogenau-dark text-white text-center font-bold text-lg py-4 px-8 brutal-border shadow-matt brutal-btn">
+                                Wie funktioniert's?
+                            </a>
+                            <a href="#join" class="bg-wogenau-yellow text-wogenau-dark text-center font-bold text-lg py-4 px-8 brutal-border shadow-matt brutal-btn">
+                                Platz buchen
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Illustration (Matt Blease Style) -->
+                    <div class="relative w-full h-80 lg:h-[500px] flex justify-center items-center">
+                        <!-- Yellow background blob -->
+                        <div class="absolute bg-wogenau-yellow w-3/4 h-3/4 brutal-border shadow-matt-large transform rotate-3"></div>
+                        
+                        <!-- Line art illustration constructed with standard HTML/CSS shapes for the "drawn" look -->
+                        <div class="relative z-10 bg-white brutal-border p-6 shadow-matt transform -rotate-2 w-4/5 max-w-md">
+                            <div class="flex flex-col items-center gap-4">
+                                <!-- Laptop Icon -->
+                                <svg class="w-32 h-32 stroke-[1.5px] stroke-wogenau-dark fill-none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 15h18M4 15V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9M2 19h20M12 15v4" />
+                                </svg>
+                                <!-- Speech Bubble -->
+                                <div class="absolute -top-6 -right-6 bg-white brutal-border px-4 py-2 shadow-[4px_4px_0px_0px_#1a1a1a] font-bold transform rotate-6">
+                                    Work, work!
+                                </div>
+                                <!-- Coffee Mug Icon -->
+                                <svg class="absolute bottom-4 right-4 w-12 h-12 stroke-[2px] stroke-wogenau-dark fill-none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z M6 1v3M10 1v3M14 1v3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-24 bg-gray-50 border-t-[3px] border-wogenau-dark">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">So geht's</h2>
+                    <p class="text-xl text-gray-600 font-medium">In drei einfachen Schritten an den Schreibtisch.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="bg-wogenau-yellow brutal-border p-8 shadow-matt relative hover:-translate-y-1 transition-transform">
+                        <div class="absolute -top-6 -left-6 w-12 h-12 bg-white brutal-border rounded-full flex items-center justify-center font-bold text-xl shadow-[4px_4px_0px_0px_#1a1a1a]">1</div>
+                        <i data-feather="smartphone" class="w-10 h-10 mb-4"></i>
+                        <h3 class="font-bold text-2xl mb-2">Verfügbarkeit prüfen</h3>
+                        <p class="font-medium text-gray-800">Schau in unserem Haus-Tool nach, ob für deinen Wunschzeitraum ein Platz im Space frei ist.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="bg-white brutal-border p-8 shadow-matt relative hover:-translate-y-1 transition-transform">
+                        <div class="absolute -top-6 -left-6 w-12 h-12 bg-wogenau-yellow brutal-border rounded-full flex items-center justify-center font-bold text-xl shadow-[4px_4px_0px_0px_#1a1a1a]">2</div>
+                        <i data-feather="calendar" class="w-10 h-10 mb-4"></i>
+                        <h3 class="font-bold text-2xl mb-2">Slot buchen</h3>
+                        <p class="font-medium text-gray-600">Trag dich ganz unkompliziert ein. So wissen alle Bescheid, wer wann unten arbeitet.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-white brutal-border p-8 shadow-matt relative hover:-translate-y-1 transition-transform">
+                        <div class="absolute -top-6 -left-6 w-12 h-12 bg-wogenau-yellow brutal-border rounded-full flex items-center justify-center font-bold text-xl shadow-[4px_4px_0px_0px_#1a1a1a]">3</div>
+                        <i data-feather="thumbs-up" class="w-10 h-10 mb-4"></i>
+                        <h3 class="font-bold text-2xl mb-2">Am Tisch</h3>
+                        <p class="font-medium text-gray-600">Hinterlasse den Platz am Ende so aufgeräumt, dass die nächste Person direkt starten kann: Tassen weg, Müll entsorgen, Kabel ordnen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="inventory" class="py-24 bg-white border-t-[3px] border-wogenau-dark">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Ausstattung</h2>
+                    <p class="text-xl text-gray-600 font-medium">Plug & Play: Alles da, was du brauchst.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-white brutal-border p-6 shadow-matt flex items-start gap-5">
+                        <div class="bg-wogenau-yellow p-3 brutal-border shadow-matt-hover shrink-0">
+                            <i data-feather="monitor" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-1">Externe Monitore</h3>
+                            <p class="text-gray-600 font-medium">An den Arbeitsplätzen stehen große Bildschirme bereit, an die du dich direkt anschließen kannst.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-white brutal-border p-6 shadow-matt flex items-start gap-5">
+                        <div class="bg-wogenau-yellow p-3 brutal-border shadow-matt-hover shrink-0">
+                            <i data-feather="link" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-1">Docks & Adapter</h3>
+                            <p class="text-gray-600 font-medium">Leichtgewichtige Dockingstations sorgen dafür, dass (fast) jeder Laptop sofort einsatzbereit ist.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="bg-white brutal-border p-6 shadow-matt flex items-start gap-5">
+                        <div class="bg-wogenau-yellow p-3 brutal-border shadow-matt-hover shrink-0">
+                            <i data-feather="wifi" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-1">Schnelles WLAN</h3>
+                            <p class="text-gray-600 font-medium">Natürlich gibt es eine stabile Verbindung für deine Video-Calls und großen Downloads.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="bg-white brutal-border p-6 shadow-matt flex items-start gap-5">
+                        <div class="bg-wogenau-yellow p-3 brutal-border shadow-matt-hover shrink-0">
+                            <i data-feather="coffee" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-1">Kaffee & Ruhe</h3>
+                            <p class="text-gray-600 font-medium">Ein Ort abseits der eigenen Wohnung, um konzentriert zu arbeiten (und zusammen Pause zu machen).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="py-24 bg-gray-50 border-t-[3px] border-wogenau-dark">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Team Coworking</h2>
+                    <p class="text-xl text-gray-600 font-medium">Hast du Fragen zur Ausstattung oder zum Space? Sprich uns einfach an.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                    <!-- Daniela -->
+                    <div class="bg-white brutal-border p-6 shadow-matt flex flex-col items-center text-center hover:-translate-y-1 transition-transform">
+                        <div class="w-20 h-20 bg-wogenau-yellow brutal-border shadow-[4px_4px_0px_0px_#1a1a1a] rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="smile" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="font-bold text-xl md:text-2xl">Daniela</h3>
+                    </div>
+
+                    <!-- Van-Lang -->
+                    <div class="bg-white brutal-border p-6 shadow-matt flex flex-col items-center text-center hover:-translate-y-1 transition-transform">
+                        <div class="w-20 h-20 bg-white brutal-border shadow-[4px_4px_0px_0px_#1a1a1a] rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="smile" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="font-bold text-xl md:text-2xl">Van-Lang</h3>
+                    </div>
+
+                    <!-- Birgit -->
+                    <div class="bg-white brutal-border p-6 shadow-matt flex flex-col items-center text-center hover:-translate-y-1 transition-transform">
+                        <div class="w-20 h-20 bg-wogenau-yellow brutal-border shadow-[4px_4px_0px_0px_#1a1a1a] rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="smile" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="font-bold text-xl md:text-2xl">Birgit</h3>
+                    </div>
+
+                    <!-- Thomas -->
+                    <div class="bg-white brutal-border p-6 shadow-matt flex flex-col items-center text-center hover:-translate-y-1 transition-transform">
+                        <div class="w-20 h-20 bg-white brutal-border shadow-[4px_4px_0px_0px_#1a1a1a] rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="smile" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="font-bold text-xl md:text-2xl">Thomas</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join" class="py-24 bg-wogenau-yellow border-t-[3px] border-wogenau-dark">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">Platz buchen</h2>
+                <p class="text-xl font-medium mb-10 max-w-2xl mx-auto text-gray-800">
+                    Die Buchung der Arbeitsplätze läuft ganz einfach über unser zentrales Haus-Tool. So siehst du immer, wer gerade da ist und ob noch ein Platz für dich frei ist.
+                </p>
+                <div class="bg-white brutal-border p-8 shadow-matt-large max-w-lg mx-auto transform rotate-1 flex flex-col items-center gap-6">
+                    <i data-feather="calendar" class="w-16 h-16 text-wogenau-dark mb-2"></i>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-2">Hier geht's zur Buchung</h3>
+                        <p class="text-gray-600 font-medium mb-4">
+                            (Der genaue Link zum internen Buchungstool folgt hier, sobald es final eingerichtet ist.)
+                        </p>
+                    </div>
+                    <a href="#tool-platzhalter" class="inline-block bg-wogenau-dark text-white font-bold py-4 px-8 text-lg brutal-border shadow-matt brutal-btn w-full text-center hover:bg-gray-800">
+                        Zum Haus-Tool
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t-[3px] border-wogenau-dark py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <div class="flex items-center gap-3">
+                    <span class="font-bold text-xl tracking-tight bg-wogenau-yellow px-2 py-1 border-[2px] border-wogenau-dark shadow-[2px_2px_0px_0px_#1a1a1a]">Coworking</span>
+                </div>
+                
+                <div class="flex gap-6 text-sm font-bold items-center">
+                    <a href="https://wogenau.haus/" class="text-gray-500 hover:text-wogenau-yellow transition-colors flex items-center gap-1">wogenau.haus <i data-feather="external-link" class="w-4 h-4"></i></a>
+                    <span class="text-gray-300">|</span>
+                    <a href="#" class="hover:text-wogenau-yellow transition-colors">Impressum</a>
+                    <a href="#" class="hover:text-wogenau-yellow transition-colors">Datenschutz</a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm font-bold text-gray-400">
+                &copy; <script>document.write(new Date().getFullYear())</script> Wogenau eG. Ein genossenschaftliches Projekt.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Feather Icons -->
+    <script>
+        feather.replace({
+            'stroke-width': 2.5
+        });
+    </script>
+</body>
+</html>
